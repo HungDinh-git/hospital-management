@@ -10,6 +10,9 @@ public class DashboardActivity extends AppCompatActivity {
 
     TextView tvWelcome;
     Button btnSchedule;
+    Button btnMedicalRecord;
+    Button btnPrescription;
+    Button btnManageAccounts;
     String email = "";
 
     @Override
@@ -19,6 +22,9 @@ public class DashboardActivity extends AppCompatActivity {
 
         tvWelcome = findViewById(R.id.tvWelcome);
         btnSchedule = findViewById(R.id.btnSchedule);
+        btnMedicalRecord = findViewById(R.id.btnMedicalRecord);
+        btnPrescription = findViewById(R.id.btnPrescription);
+        btnManageAccounts = findViewById(R.id.btnManageAccounts);
 
         // Nhận email từ LoginActivity
         email = getIntent().getStringExtra("email");
