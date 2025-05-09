@@ -36,8 +36,22 @@ public class DashboardActivity extends AppCompatActivity {
         });
         String role = getIntent().getStringExtra("role");
 
-        if (!"Bệnh nhân".equalsIgnoreCase(role)) {
-            btnSchedule.setVisibility(View.GONE); // hoặc dùng setEnabled(false)
+        // Hiển thị chức năng theo vai trò
+        if ("Bệnh nhân".equalsIgnoreCase(role)) {
+            btnSchedule.setVisibility(View.VISIBLE);
+            btnMedicalRecord.setVisibility(View.VISIBLE);
+            btnPrescription.setVisibility(View.GONE);
+            btnManageAccounts.setVisibility(View.GONE);
+        } else if ("Bác sĩ".equalsIgnoreCase(role)) {
+            btnSchedule.setVisibility(View.GONE);
+            btnMedicalRecord.setVisibility(View.VISIBLE);
+            btnPrescription.setVisibility(View.VISIBLE);
+            btnManageAccounts.setVisibility(View.GONE);
+        } else if ("Admin".equalsIgnoreCase(role)) {
+            btnSchedule.setVisibility(View.GONE);
+            btnMedicalRecord.setVisibility(View.GONE);
+            btnPrescription.setVisibility(View.GONE);
+            btnManageAccounts.setVisibility(View.VISIBLE);
         }
         // Sự kiện nút Thông tin cá nhân
         Button btnProfile = findViewById(R.id.btnProfile);
